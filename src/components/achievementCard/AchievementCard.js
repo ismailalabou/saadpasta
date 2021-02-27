@@ -1,7 +1,7 @@
 import React from "react";
 import "./AchievementCard.css";
 
-export default function AchievementCard({ cardInfo, isDark }) {
+export default function AchievementCard({cardInfo, isDark}) {
   function openUrlInNewTab(url) {
     var win = window.open(url, "_blank");
     win.focus();
@@ -24,7 +24,10 @@ export default function AchievementCard({ cardInfo, isDark }) {
         {cardInfo.footer.map((v, i) => {
           return (
             <span
-              class={isDark ? "dark-mode certificate-tag" : "certificate-tag"}
+              key={i}
+              className={
+                isDark ? "dark-mode certificate-tag" : "certificate-tag"
+              }
               onClick={() => openUrlInNewTab(v.url)}
             >
               {v.name}
